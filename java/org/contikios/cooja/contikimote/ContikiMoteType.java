@@ -231,7 +231,7 @@ public class ContikiMoteType implements MoteType {
                                   boolean visAvailable) throws MoteTypeCreationException {
     myConfig = simulation.getCooja().getProjectConfig().clone();
 
-    if (visAvailable) {
+    if (visAvailable && !simulation.isQuickSetup()) {
 
       if (getDescription() == null) {
         setDescription("Cooja Mote Type #" + (simulation.getMoteTypes().length + 1));
